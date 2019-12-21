@@ -7,7 +7,7 @@
 
   <title>Programowanie Kreatywne</title>
   <meta name="description" content="Projekt na zaliczenie">
-  <meta name="author" content="Karol Tarlowski">
+  <meta name="author" content="Karol Tarłowski">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
@@ -31,10 +31,11 @@
         <span class="input-group-text" id="inputGroup-sizing-lg">Subject</span>
       </div>
       <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-        placeholder="Enter an interesting topic" id="userInput" data-toggle="tooltip" title="Enter an interesting topic">
+        placeholder="Enter an interesting topic" id="userInput" data-toggle="tooltip"
+        title="Enter an interesting topic">
     </div><br>
     <!-- Button gets user's input and adds it to API request -->
-    <button type="button" class="btn btn-secondary" onclick="getPhotosAPI()">Get Photos!</button><br><br>
+    <button type="button" id="button1" class="btn btn-secondary" onclick="getPhotosAPI()">Get Photos!</button><br><br>
 
   </div>
   <!-- Empty invisible gallery ready to be filled with photos
@@ -51,8 +52,8 @@
       <img src="" alt="">
     </a>
     <a href="" title="">
-        <img src="" alt="">
-      </a>
+      <img src="" alt="">
+    </a>
     <br><br>
     <a href="" title="">
       <img src="" alt="">
@@ -64,8 +65,8 @@
       <img src="" alt="">
     </a>
     <a href="" title="">
-        <img src="" alt="">
-      </a>
+      <img src="" alt="">
+    </a>
   </div>
 
   <script>
@@ -93,8 +94,13 @@
         })
       }
     }
-
-
+    var userInput = document.getElementById("userInput");
+    userInput.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("button1").click();
+      }
+    });
   </script>
 </body>
 
